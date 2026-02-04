@@ -22,5 +22,5 @@ cv = CountVectorizer(max_features=5000, stop_words="english")
 vector = cv.fit_transform(indata["all"].values.astype('U')).toarray()  # vectorize text
 similarity = cosine_similarity(vector)  # obtain similarity
 
-# export result to csv
+# export result to npy
 np.save('processed_data/embeddings.npy', similarity)
